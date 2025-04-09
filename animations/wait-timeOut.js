@@ -1,4 +1,4 @@
-export async function showLoadingAnimation() {
+export async function waitTomeOut() {
   try {
     // Simulate some async operation, like fetching data
     await new Promise((resolve) => setTimeout(resolve, 10)); // Replace with actual async task

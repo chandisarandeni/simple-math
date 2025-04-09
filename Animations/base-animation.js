@@ -2,7 +2,7 @@ import figlet from "figlet";
 
 export function baseAnimation() {
   // Print text in ASCII art with a specific font
-  figlet.text("SIMPLE MATH", function (err, data) {
+  figlet.text("SIMPLE   MATH", function (err, data) {
     if (err) {
       console.log("Something went wrong...");
       console.dir(err);
