@@ -1,21 +1,22 @@
 import chalk from "chalk";
 import readline from "readline";
 import { Writable } from "stream";
+import { checkOperations } from "../conditions/check-operations.js";
 
-// Create a custom output stream to mute input
+// Custom silent output stream to suppress input echo
 const mutableStdout = new Writable({
   write(chunk, encoding, callback) {
-    // Do nothing to suppress output
-    callback();
+    callback(); // Do nothing
   },
 });
 
-const readLine = readline.createInterface({
-  input: process.stdin,
-  output: mutableStdout, // Use the silent stream here
-});
-
 export function helpInstructions() {
+  // Create a new readline interface each time
+  const readLine = readline.createInterface({
+    input: process.stdin,
+    output: mutableStdout,
+  });
+
   console.log(
     chalk.bgGreen("Instructions") +
       "\n\n" +
@@ -42,12 +43,14 @@ export function helpInstructions() {
   );
 
   readLine.question("Press Enter to continue...", (input) => {
-    //.clear(); // Optional: clear previous prompt if needed
     if (input === "") {
-      console.log("You are entered to the program..");
+      readLine.close();
+      checkOperations();
     } else {
-      console.log("\nYou are not entered to the program..");
+      console.clear();
+      readLine.close();
+      console.log("\nWrong inptut. Please read the instructions correctly and try again...\n");
+      helpInstructions();
     }
-    readLine.close();
   });
 }

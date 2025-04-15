@@ -1,8 +1,8 @@
-import { baseAnimation } from "./Animations/base-animation.js";
-import { subAnimationDevelopedBy } from "./Animations/base-animation.js";
-import { basicLine } from "./Animations/base-animation.js";
-import { waitTomeOut } from "./animations/wait-timeOut.js";
-import showProgressBar from "./Animations/pogress-bar.js";
+import { baseAnimation } from "./basic-loadings/base-animation.js";
+import { subAnimationDevelopedBy } from "./basic-loadings/base-animation.js";
+import { basicLine } from "./basic-loadings/base-animation.js";
+import { waitTomeOut } from "./basic-loadings/wait-timeOut.js";
+import showProgressBar from "./basic-loadings/pogress-bar.js";
 import { helpInstructions } from "./instructions/help-instructions.js";
 
 async function runAnimations() {
