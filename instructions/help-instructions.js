@@ -1,17 +1,15 @@
 import chalk from "chalk";
 import readline from "readline";
 import { Writable } from "stream";
-import { checkOperations } from "../conditions/check-operations.js";
+import { checkOperations } from "../conditions/how-many-questions.js";
 
-// Custom silent output stream to suppress input echo
 const mutableStdout = new Writable({
   write(chunk, encoding, callback) {
-    callback(); // Do nothing
+    callback();
   },
 });
 
 export function helpInstructions() {
-  // Create a new readline interface each time
   const readLine = readline.createInterface({
     input: process.stdin,
     output: mutableStdout,
@@ -49,7 +47,9 @@ export function helpInstructions() {
     } else {
       console.clear();
       readLine.close();
-      console.log("\nWrong inptut. Please read the instructions correctly and try again...\n");
+      console.log(
+        "\nWrong input. Please read the instructions correctly and try again...\n"
+      );
       helpInstructions();
     }
   });
