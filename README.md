@@ -76,13 +76,6 @@ Your answer: 6
 
 ❌ Wrong. The correct answer is 5
 ```
-
----
-
-## 📚 License
-
-MIT License © 2025  
-
 ---
 
 Want to add a timer, score tracker, or difficulty levels? Fork the repo and feel free to develop! 😜
